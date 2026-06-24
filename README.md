@@ -3,7 +3,7 @@
 ## Student Information
 
 **Name:** Varnit Chourasiya
-**Roll Number:** *Your Roll Number Here*
+**Roll Number:** *23f3000843*
 **Course:** Deep Learning & Generative AI Project (BS in Data Science and Applications)
 
 ---
@@ -32,7 +32,6 @@ The project is part of the Deep Learning & Generative AI curriculum and will be 
 ## Technologies Used
 
 * Python
-* Jupyter Notebook
 * Pandas
 * NumPy
 * Scikit-learn
@@ -90,10 +89,3 @@ All experiments, training runs, and model comparisons will be tracked using Weig
 
 The final model performance will be evaluated through the official Kaggle competition associated with this project.
 
----
-
-## Current Status
-
-Repository initialized and project setup completed.
-
-Further updates, code implementations, notebooks, reports, and experiment logs will be added throughout the project duration.
