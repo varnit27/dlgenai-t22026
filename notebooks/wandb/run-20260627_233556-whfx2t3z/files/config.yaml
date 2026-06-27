@@ -1,0 +1,48 @@
+_wandb:
+    value:
+        cli_version: 0.28.0
+        e:
+            6wsw66y4k2vpa258udyrudvtpgxqyz8w:
+                codePath: c:\Users\hp\Desktop\dlgenai-t22026\notebooks\DL-23f3000843-notebook-t22026.ipynb
+                codePathLocal: DL-23f3000843-notebook-t22026.ipynb
+                cpu_count: 10
+                cpu_count_logical: 12
+                disk:
+                    /:
+                        total: "1023133347840"
+                        used: "587370692608"
+                email: varnitchourasiya27@gmail.com
+                executable: c:\Users\hp\AppData\Local\Programs\Python\Python313\python.exe
+                git:
+                    commit: 514f82ce8b5390fe76addd6c79a68a7a17830221
+                    remote: https://github.com/varnit27/dlgenai-t22026.git
+                host: VC
+                memory:
+                    total: "16832090112"
+                os: Windows-11-10.0.26200-SP0
+                program: c:\Users\hp\Desktop\dlgenai-t22026\notebooks\DL-23f3000843-notebook-t22026.ipynb
+                python: CPython 3.13.7
+                root: c:\Users\hp\Desktop\dlgenai-t22026\notebooks
+                startedAt: "2026-06-27T18:05:56.943170Z"
+                writerId: 6wsw66y4k2vpa258udyrudvtpgxqyz8w
+        m: []
+        python_version: 3.13.7
+        t:
+            "3":
+                - 2
+                - 16
+            "4": 3.13.7
+            "5": 0.28.0
+            "8":
+                - 1
+                - 3
+            "12": 0.28.0
+            "13": windows-amd64
+architecture:
+    value: CNN
+dataset:
+    value: CIFAR-100
+epochs:
+    value: 10
+learning_rate:
+    value: 0.02
