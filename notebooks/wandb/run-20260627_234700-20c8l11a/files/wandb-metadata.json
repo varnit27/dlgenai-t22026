@@ -1,0 +1,28 @@
+{
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "CPython 3.13.7",
+  "startedAt": "2026-06-27T18:17:00.866718Z",
+  "program": "c:\\Users\\hp\\Desktop\\dlgenai-t22026\\notebooks\\DL-23f3000843-notebook-t22026.ipynb",
+  "codePath": "c:\\Users\\hp\\Desktop\\dlgenai-t22026\\notebooks\\DL-23f3000843-notebook-t22026.ipynb",
+  "codePathLocal": "DL-23f3000843-notebook-t22026.ipynb",
+  "git": {
+    "remote": "https://github.com/varnit27/dlgenai-t22026.git",
+    "commit": "9ba30d307e3aa83b85200fd1ff6447200d679725"
+  },
+  "email": "varnitchourasiya27@gmail.com",
+  "root": "c:\\Users\\hp\\Desktop\\dlgenai-t22026\\notebooks",
+  "host": "VC",
+  "executable": "c:\\Users\\hp\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+  "cpu_count": 10,
+  "cpu_count_logical": 12,
+  "disk": {
+    "/": {
+      "total": "1023133347840",
+      "used": "587632312320"
+    }
+  },
+  "memory": {
+    "total": "16832090112"
+  },
+  "writerId": "utvwtpbd18tgso2zwg5go58bfdin23y0"
+}
