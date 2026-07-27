@@ -5,6 +5,7 @@ import numpy as np
 import os
 import zipfile
 import urllib.request
+from tqdm import tqdm
 
 # --- 1. MODEL ARCHITECTURE ---
 class BiLSTMClassifier(nn.Module):
@@ -21,20 +22,44 @@ class BiLSTMClassifier(nn.Module):
         h = self.dropout(h)
         return self.fc(h)
 
-# --- 2. LOAD RESOURCES (Runs once on startup) ---
+
+# Helper class to display a download progress bar in the terminal
+class DownloadProgressBar(tqdm):
+    def update_to(self, b=1, bsize=1, tsize=None):
+        if tsize is not None:
+            self.total = tsize
+        self.update(b * bsize - self.n)
+
 def load_glove():
-    print("Loading GloVe embeddings...")
-    if not os.path.exists("glove/glove.6B.300d.txt"):
-        os.makedirs("glove", exist_ok=True)
-        urllib.request.urlretrieve("http://nlp.stanford.edu/data/glove.6B.zip", "glove.6B.zip")
-        with zipfile.ZipFile("glove.6B.zip", 'r') as zip_ref:
+    zip_path = "glove.6B.zip"
+    txt_path = "glove/glove.6B.300d.txt"
+    
+    os.makedirs("glove", exist_ok=True)
+    
+    # 1. DOWNLOAD WITH PROGRESS BAR
+    if not os.path.exists(txt_path):
+        if not os.path.exists(zip_path):
+            print("Downloading GloVe embeddings (~822 MB)...")
+            url = "https://huggingface.co/stanfordnlp/glove/resolve/main/glove.6B.zip"
+            with DownloadProgressBar(unit='B', unit_scale=True, miniters=1, desc="Downloading GloVe") as t:
+                urllib.request.urlretrieve(url, filename=zip_path, reporthook=t.update_to)
+        
+        # 2. EXTRACT WITH FEEDBACK
+        print("Extracting GloVe zip file...")
+        with zipfile.ZipFile(zip_path, 'r') as zip_ref:
             zip_ref.extractall("glove")
-            
+        print("Extraction complete!")
+
+    # 3. LOAD TEXT FILE WITH LINE-BY-LINE PROGRESS BAR
     embeddings = {}
-    with open("glove/glove.6B.300d.txt", encoding="utf-8") as f:
-        for line in f:
+    print("Loading vectors into memory...")
+    with open(txt_path, encoding="utf-8") as f:
+        # GloVe 6B 300d has exactly 400,000 lines/words
+        for line in tqdm(f, total=400000, desc="Parsing GloVe Vectors"):
             values = line.split()
             embeddings[values[0]] = np.array(values[1:], dtype=np.float32)
+            
+    print(f"Successfully loaded {len(embeddings):,} GloVe vectors!")
     return embeddings
 
 def text_to_seq(text, glove_dict, max_len=50, dim=300):
