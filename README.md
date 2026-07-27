@@ -1,3 +1,16 @@
+---
+title: Smart MCQ Solver
+emoji: 🧠
+colorFrom: blue
+colorTo: purple
+sdk: gradio
+app_file: app.py
+pinned: false
+---
+
+# Smart MCQ Solver (BiLSTM)
+This is the final deep learning project for the DL & GenAI course.
+
 # Deep Learning & Generative AI Project
 
 ## Student Information
