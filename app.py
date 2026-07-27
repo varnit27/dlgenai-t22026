@@ -1,5 +1,6 @@
 import gradio as gr
 import torch
+import spaces
 import torch.nn as nn
 import numpy as np
 import os
@@ -80,6 +81,7 @@ glove = load_glove()
 OPTIONS = ["A", "B", "C", "D", "E"]
 
 # --- 3. PREDICTION FUNCTION ---
+@spaces.GPU
 def predict_mcq(prompt, opt_a, opt_b, opt_c, opt_d, opt_e):
     if not os.path.exists("bilstm_weights.pth"):
         return "Error: Model weights not found.", {}
