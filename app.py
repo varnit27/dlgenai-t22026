@@ -111,7 +111,7 @@ def predict_mcq(prompt, opt_a, opt_b, opt_c, opt_d, opt_e):
     return f"Top 3 Predictions: {top_3_preds}", confidence_dict
 
 # --- 4. GRADIO UI LAYOUT ---
-with gr.Blocks(theme=gr.themes.Soft()) as demo:
+with gr.Blocks() as demo:
     gr.Markdown("# 🧠 Smart MCQ Solver (BiLSTM)")
     gr.Markdown("Enter a prompt and 5 options to get the top 3 predicted answers.")
     
@@ -137,4 +137,4 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
 
 if __name__ == "__main__":
     # Launch locally or on Spaces
-    demo.launch()
+    demo.launch(theme=gr.themes.Soft(), ssr_mode=False)
