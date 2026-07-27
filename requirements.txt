@@ -1,4 +1,0 @@
-gradio
-torch
-numpy
-spaces
